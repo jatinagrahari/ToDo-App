@@ -1,1 +1,56 @@
 @import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-sans: "Inter", system-ui, sans-serif;
+  
+  /* Custom color variables for thematic elements */
+  --color-primary-50: #eff6ff;
+  --color-primary-500: #3b82f6;
+  --color-primary-600: #2563eb;
+  
+  /* Taskflow specific variables */
+  --color-bg-light: #f9fafb;
+  --color-bg-dark: #0a0a0b;
+  --color-surface-light: #ffffff;
+  --color-surface-dark: #121214;
+  --color-border-light: #e5e7eb;
+  --color-border-dark: #27272a;
+}
+
+@layer base {
+  :root {
+    --bg-color: var(--color-bg-light);
+    --text-color: #000000;
+  }
+  
+  .dark {
+    --bg-color: var(--color-bg-dark);
+    --text-color: #ffffff;
+  }
+  
+  body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    @apply font-sans antialiased transition-colors duration-300;
+  }
+}
+
+/* Custom scrollbar to keep it looking premium */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-gray-300 dark:bg-zinc-700 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-gray-400 dark:bg-zinc-600;
+}
