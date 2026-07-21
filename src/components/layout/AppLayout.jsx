@@ -1,7 +1,12 @@
 import React from "react";
 import Sidebar from "./Sidebar";
 import Navbar from "./Navbar";
-import { IoHeart, IoLogoGithub, IoLogoLinkedin } from "react-icons/io5";
+import {
+  IoHeart,
+  IoGlobeOutline,
+  IoLogoGithub,
+  IoLogoLinkedin,
+} from "react-icons/io5";
 
 const AppLayout = ({ children }) => {
   return (
@@ -22,14 +27,21 @@ const AppLayout = ({ children }) => {
             </div>
             <div className="flex items-center space-x-4">
               <a
-                href="https://www.github.com/jatinagrahari"
+                href="https://jatinagrahari.com"
+                target="_blank"
+                className="hover:text-gray-900 dark:hover:text-zinc-300 transition-colors flex items-center gap-1.5"
+              >
+                <IoGlobeOutline className="text-lg" /> Portfolio
+              </a>
+              <a
+                href="https://github.com/jatinagrahari"
                 target="_blank"
                 className="hover:text-gray-900 dark:hover:text-zinc-300 transition-colors flex items-center gap-1.5"
               >
                 <IoLogoGithub className="text-lg" /> GitHub
               </a>
               <a
-                href="https://www.linkedin.com/in/jatinagrahari"
+                href="https://Slinkedin.com/in/jatinagrahari"
                 target="_blank"
                 className="hover:text-gray-900 dark:hover:text-zinc-300 transition-colors flex items-center gap-1.5"
               >
