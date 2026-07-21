@@ -1,234 +1,75 @@
-# ✅ Redux Todo App
+# TaskFlow – Modern Task Management 🚀
 
-> **A React-based Todo Application using Redux Toolkit for centralized state management — add, edit, delete, and manage todos with a predictable global state architecture**
+TaskFlow is a premium, production-ready productivity and task management application engineered with modern React and Redux Toolkit. Built with a focus on seamless user experience, it transcends standard to-do apps by offering robust state management, real-time dynamic filtering, multi-variate sorting, and a beautiful Linear-inspired glassmorphism design.
 
-[![React](https://img.shields.io/badge/Library-React-%2361DAFB?logo=react&logoColor=black)](https://reactjs.org/)
-[![Redux Toolkit](https://img.shields.io/badge/State-Redux%20Toolkit-%23764ABC?logo=redux&logoColor=white)](https://redux-toolkit.js.org/)
-[![JavaScript](https://img.shields.io/badge/Language-JavaScript-%23F7DF1E?logo=javascript&logoColor=black)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
-[![Vite](https://img.shields.io/badge/Build-Vite-%23646CFF?logo=vite&logoColor=white)](https://vitejs.dev/)
-
-🐛 **[Report Bug](https://github.com/jatinagrahari/Redux-Todo/issues)** • ⭐ **[GitHub](https://github.com/jatinagrahari/Redux-Todo)**
+This project demonstrates advanced frontend architecture, scalable component structures, and meticulous attention to UI/UX details, making it a perfect showcase of enterprise-grade React development.
 
 ---
 
-# ✨ Features
+## ✨ Key Features
 
-- ➕ **Add Todos** — Create new tasks instantly
-- ✏️ **Edit Todos** — Update existing todos without losing state
-- ❌ **Delete Todos** — Remove completed or unwanted tasks
-- 📋 **Global State Management** — Todos managed using Redux Toolkit
-- ⚡ **Instant UI Updates** — React automatically re-renders on state changes
-- 🔄 **Predictable State Flow** — Actions → Reducers → Updated Store → UI
-
----
-
-# 🛠️ Tech Stack
-
-| Layer                | Technology    |
-| -------------------- | ------------- |
-| **UI Library**       | React         |
-| **Language**         | JavaScript    |
-| **State Management** | Redux Toolkit |
-| **React Binding**    | React Redux   |
-| **Build Tool**       | Vite          |
+- **Advanced Task Management**: Full CRUD operations with detailed metadata including Priorities (High, Medium, Low), Categories (Work, Personal, Learning), and Due Dates.
+- **Dynamic Redux Engine**: Leverages `@reduxjs/toolkit` for absolute state predictability, seamlessly persisting complex nested states to `localStorage`.
+- **Intelligent Filtering & Sorting**: Instantly filter tasks by status or category, and sort them chronologically, by priority, or by approaching deadlines.
+- **Premium UI/UX**: Designed with Tailwind CSS v4, featuring glassmorphic overlays, fluid transitions, hover micro-interactions, and beautiful Empty States.
+- **Dark & Light Mode**: A robust, persistent theme switcher that seamlessly toggles the interface via custom Tailwind CSS variants.
+- **Global Search**: Instantly find tasks through a lightning-fast, real-time search implementation across the entire dashboard.
+- **Instant Feedback**: Integrated with `react-hot-toast` for elegant, non-intrusive popup notifications upon user actions.
+- **Fully Responsive**: Flawlessly adapts across all device viewports, snapping from a multi-column dashboard on desktop to a compact, intuitive mobile layout.
 
 ---
 
-# ⚙️ React & Redux Concepts Used
+## 🎨 Project Preview
 
-### React
+|                           Dashboard & Overview                            |                              Task Management                               |
+| :-----------------------------------------------------------------------: | :------------------------------------------------------------------------: |
+| <img src="./src/assets/demo/ss-2.png" width="450" alt="Dashboard View" /> | <img src="./src/assets/demo/ss-4.png" width="450" alt="Task Management" /> |
 
-- `useState`
-- `useEffect`
-- Component-based Architecture
-
-### Redux Toolkit
-
-- `configureStore()`
-- `createSlice()`
-- `useSelector()`
-- `useDispatch()`
-- Redux Store
-- Actions
-- Reducers
-- Immutable State Updates
+|                         Dark Mode Aesthetic                          |                           Add / Edit Modal                            |
+| :------------------------------------------------------------------: | :-------------------------------------------------------------------: |
+| <img src="./src/assets/demo/ss-1.png" width="450" alt="Dark Mode" /> | <img src="./src/assets/demo/ss-3.png" width="450" alt="Modal View" /> |
 
 ---
 
-# 🚀 Quick Start
+## 🚀 Live Demo
 
-## Prerequisites
-
-- Node.js installed
-- VS Code (recommended)
+[Experience TaskFlow Live](https://taskflowtodos.netlify.app/)
 
 ---
 
-# 📁 Project Structure
+## 💻 Tech Stack & Architecture
 
-```bash
-Redux-Todo/
-├── src/
-│   ├── app/
-│   │   └── store.js            # Redux store configuration
-│   ├── features/
-│   │   └── todo/
-│   │       └── todoSlice.js    # Slice, reducers & actions
-│   ├── components/
-│   │   ├── AddTodo.jsx         # Add/Edit todo form
-│   │   └── Todos.jsx           # Todo list component
-│   ├── App.jsx                 # Root component
-│   ├── main.jsx                # Provider setup
-│   └── index.css
-├── public/
-└── README.md
-```
+TaskFlow is built using a modern, scalable technology stack chosen for speed, reliability, and developer experience.
+
+| Technology          | Role             | Description                                                                                     |
+| :------------------ | :--------------- | :---------------------------------------------------------------------------------------------- |
+| **React 19**        | Core Framework   | Utilizes the latest React hooks and component paradigms for a highly interactive UI.            |
+| **Redux Toolkit**   | State Management | Provides a centralized, predictable state container, managing complex filters and CRUD logic.   |
+| **Vite**            | Build Tooling    | Delivers lightning-fast HMR and optimized production bundles.                                   |
+| **Tailwind CSS v4** | Styling          | Powers the entire design system using utility classes, CSS variables, and responsive modifiers. |
+| **React Icons**     | Assets           | Integrates lightweight, scalable vector icons (`Io5`) across the interface.                     |
+| **React Hot Toast** | UI Feedback      | Delivers smooth, customizable toast notifications.                                              |
 
 ---
 
-# 🎯 How It Works
+## 📁 Scalable Folder Architecture
 
-1. User enters a todo and clicks **Add Todo**
-2. `dispatch(addTodo())` sends an action to Redux
-3. The reducer updates the global store
-4. `useSelector()` automatically receives updated state
-5. React re-renders the Todo List
-
-### Editing Flow
-
-1. Click **Edit**
-2. Todo text populates the input field
-3. Button changes from **Add Todo** → **Update Todo**
-4. `dispatch(updateTodo())` updates the selected todo
-5. UI refreshes automatically
-
-### Delete Flow
-
-1. Click **Delete**
-2. `dispatch(removeTodo())`
-3. Reducer removes the todo
-4. Updated list is rendered instantly
-
----
-
-# 🧠 Key Implementation
-
-## Creating a Slice
-
-```javascript
-import { createSlice } from "@reduxjs/toolkit";
-
-const todoSlice = createSlice({
-  name: "todo",
-  initialState: {
-    todos: [],
-  },
-  reducers: {
-    addTodo: () => {},
-    removeTodo: () => {},
-    updateTodo: () => {},
-  },
-});
-```
-
----
-
-## Dispatching an Action
-
-```javascript
-const dispatch = useDispatch();
-
-dispatch(
-  addTodo({
-    id: Date.now(),
-    text: todo,
-  }),
-);
-```
-
----
-
-## Reading State
-
-```javascript
-const todos = useSelector((state) => state.todos);
-```
-
----
-
-# 📸 Screenshots
-
-<details>
-<summary><b>Click to expand screenshots</b></summary>
-
-### Home
-
-<!-- ![Todo App](./src/assets/home.png)  -->
-
-### Edit Todo
-
-<!-- ![Edit Todo](./src/assets/edit.png) -->
-
-</details>
-
----
-
-# 🚧 Current Status
-
-Completed Features:
-
-- ✅ Add Todo
-- ✅ Edit Todo
-- ✅ Delete Todo
-- ✅ Redux Toolkit Integration
-- ✅ Global State Management
-
----
-
-# 📝 Future Improvements
-
-- 💾 Save todos in Local Storage
-- ✅ Mark todos as completed
-- 📅 Add due dates
-- 🔍 Search todos
-- 🎯 Filter Active / Completed tasks
-- 📱 Improve responsive design
-- 🌙 Dark Mode
-
----
-
-# 🏗️ State Flow
+The codebase is organized using enterprise-standard patterns to ensure maintainability and separation of concerns:
 
 ```text
-User Action
-      │
-      ▼
-dispatch(action)
-      │
-      ▼
-Redux Store
-      │
-      ▼
-Reducer Updates State
-      │
-      ▼
-Updated Store
-      │
-      ▼
-useSelector()
-      │
-      ▼
-React Re-renders UI
+src/
+├── components/
+│   ├── features/      # Complex logic components (TaskModal, TaskList, DashboardCards)
+│   ├── layout/        # Structural components (Navbar, Sidebar, AppLayout)
+│   └── ui/            # Reusable primitives (Button, Input, ThemeToggle)
+├── redux/
+│   ├── slices/        # Redux Toolkit slices (taskSlice.js)
+│   └── store.js       # Centralized store configuration
+├── utils/             # Helper functions (Tailwind class merging)
+├── App.jsx            # Application root and assembly
+└── main.jsx           # React DOM rendering
 ```
 
 ---
 
-# 🙏 Acknowledgments
-
-- Built with ❤️ using React, Redux Toolkit, and Vite.
-
----
-
-# ⭐ Show your support
-
-Give a ⭐ if this project helped you understand Redux Toolkit and React state management!
+_Made with 💖 by Jatin_
