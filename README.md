@@ -72,4 +72,4 @@ src/
 
 ---
 
-_Made with 💖 by Jatin_
+_Made with 💖 by Jatin Agrahari_
